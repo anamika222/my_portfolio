@@ -1,0 +1,112 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Soptok Chatterjee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ছবি বড় হওয়ার সময় স্মুথ এনিমেশন */
+        #lightbox-modal {
+            transition: opacity 0.3s ease-in-out;
+            display: none;
+        }
+        #lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+
+
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 dark:text-white mb-4">
+                Professional <span class="text-indigo-600">Certifications</span>
+            </h1>
+            <div class="h-1.5 w-24 bg-indigo-600 mx-auto rounded-full mb-6"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <div class="group cursor-pointer bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-xl transition-all duration-500 hover:-translate-y-3" 
+                 onclick="openLightbox('{% static 'images/akr.jpg' %}')">
+                <div class="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 flex items-center justify-center">
+                    <img src="{% static 'images/akr.jpg' %}" alt="AKR" class="w-full h-full object-contain p-2">
+                </div>
+                <div class="mt-4 text-center pb-2">
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">AKR Technology</h3>
+                    <p class="text-sm text-indigo-500">Click to Preview</p>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-xl transition-all duration-500 hover:-translate-y-3" 
+                 onclick="openLightbox('{% static 'images/exp_cer_soptok_infinity.jpg' %}')">
+                <div class="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 flex items-center justify-center">
+                    <img src="{% static 'images/exp_cer_soptok_infinity.jpg' %}" alt="Infinity" class="w-full h-full object-contain p-2">
+                </div>
+                <div class="mt-4 text-center pb-2">
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Infinity Technology</h3>
+                    <p class="text-sm text-indigo-500">Click to Preview</p>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-xl transition-all duration-500 hover:-translate-y-3" 
+                 onclick="openLightbox('{% static 'images/exp_elel_12.jpg' %}')">
+                <div class="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 flex items-center justify-center">
+                    <img src="{% static 'images/exp_elel_12.jpg' %}" alt="e-Learning" class="w-full h-full object-contain p-2">
+                </div>
+                <div class="mt-4 text-center pb-2">
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">e-Learning & Earning</h3>
+                    <p class="text-sm text-indigo-500">Click to Preview</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-black/90 items-center justify-center p-4 md:p-10" onclick="closeLightbox()">
+        <button class="absolute top-5 right-5 text-white text-4xl hover:text-indigo-400 transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Full View" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300 scale-95">
+    </div>
+
+    <script>
+        function openLightbox(imgSrc) {
+            const modal = document.getElementById('lightbox-modal');
+            const fullImg = document.getElementById('lightbox-img');
+            
+            fullImg.src = imgSrc;
+            modal.classList.add('active');
+            // পপ-আপ হওয়ার সময় একটু জুম ইফেক্ট
+            setTimeout(() => {
+                fullImg.classList.remove('scale-95');
+                fullImg.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            const fullImg = document.getElementById('lightbox-img');
+            
+            fullImg.classList.remove('scale-100');
+            fullImg.classList.add('scale-95');
+            modal.classList.remove('active');
+        }
+
+        // কীবোর্ড এর Esc বাটন চাপলে ক্লোজ হবে
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+</html>
+{% endblock %}

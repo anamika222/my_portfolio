@@ -1,0 +1,141 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Home | Soptok Chatterjee{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Tips & Tricks | Soptok Chatterjee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card-shadow:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] dark:bg-gray-950 transition-colors duration-500">
+
+    <section class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="mb-12">
+                <ol class="flex items-center gap-3 text-sm">
+                    <li><a href="{% url 'home' %}" class="text-gray-400 hover:text-teal-500 transition-colors"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="text-gray-300">/</li>
+                    <li class="text-teal-500 font-semibold tracking-wide uppercase">Digital Marketing</li>
+                </ol>
+            </nav>
+
+            <div class="max-w-3xl mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-widest mb-6">
+                    Resources & Insights
+                </span>
+                <h1 class="text-5xl md:text-7xl font-black text-gray-900 dark:text-white leading-tight mb-8">
+                    Elevate Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-500">Digital Presence</span>
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed border-l-4 border-orange-500 pl-6">
+                    আমরা শেয়ার করি লেটেস্ট ডিজিটাল মার্কেটিং স্ট্র্যাটেজি, এসইও হ্যাকস এবং বিজনেস গ্রোথ টিপস যা আপনার ব্যবসায়িক লক্ষ্য অর্জনে সাহায্য করবে।
+                </p>
+            </div>
+<div class="flex flex-wrap gap-3 mb-10">
+    <a href="{% url 'digital_marketing' %}" 
+       class="px-5 py-2 rounded-full {% if not selected_tag %}bg-teal-500 text-white{% else %}bg-white dark:bg-gray-900 border text-gray-600{% endif %} text-xs font-bold transition shadow-sm">
+       All Tips
+    </a>
+
+    {% for tag in tags %}
+    <a href="{% url 'digital_marketing' %}?tag={{ tag.slug }}" 
+       class="px-5 py-2 rounded-full {% if selected_tag == tag.slug %}bg-teal-500 text-white{% else %}bg-white dark:bg-gray-900 border text-gray-600{% endif %} text-xs font-bold hover:border-teal-500 transition shadow-sm">
+       {{ tag.name }}
+    </a>
+    {% endfor %}
+</div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {% for post in posts %}
+                <article class="group relative bg-white dark:bg-gray-900 rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-500 card-shadow">
+                    <div class="relative h-64 overflow-hidden">
+                        {% if post.thumbnail %}
+                        <img src="{% static 'images/download.jpg' %}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="{{ post.title }}">
+                        {% else %}
+                        <div class="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                            <i class="fas fa-image text-4xl text-gray-400"></i>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="absolute top-5 left-5">
+                            <span class="px-4 py-2 rounded-full glass-effect text-white text-[10px] font-bold uppercase tracking-widest">
+                                Marketing
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 lg:p-10">
+                        <div class="flex items-center gap-4 mb-4 text-xs text-gray-400 uppercase tracking-tighter">
+                            <span><i class="far fa-calendar-alt mr-1"></i> {{ post.published_date|date:"M d, Y" }}</span>
+                            <span class="h-1 w-1 bg-gray-300 rounded-full"></span>
+                            <span><i class="far fa-clock mr-1"></i> 5 Min Read</span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-snug group-hover:text-teal-500 transition-colors">
+                            {{ post.title }}
+                        </h3>
+                        
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-8 line-clamp-3">
+                            {{ post.content|truncatewords:20 }}
+                        </p>
+
+                        <a href="{% url 'blog_detail' post.slug %}" class="inline-flex items-center gap-3 text-gray-900 dark:text-white font-bold text-sm hover:gap-5 transition-all group/link">
+                            <span class="relative">
+                                Read Full Article
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-500 transition-all group-hover/link:w-full"></span>
+                            </span>
+                            <i class="fas fa-arrow-right text-teal-500"></i>
+                        </a>
+                    </div>
+                </article>
+                {% empty %}
+                <div class="col-span-full py-24 text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 dark:bg-gray-800 mb-6 text-gray-400 text-3xl">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">কোন পোস্ট পাওয়া যায়নি</h3>
+                    <p class="text-gray-500">শীঘ্রই আমরা এই ক্যাটাগরিতে নতুন পোস্ট পাবলিশ করব।</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+<div class="mt-20 p-10 lg:p-16 rounded-[3rem] bg-gradient-to-br from-teal-600 to-emerald-700 text-white relative overflow-hidden">
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+        <div class="max-w-md">
+            <h2 class="text-3xl font-bold mb-4">ডিজিটাল মার্কেটিং হ্যাকস চান?</h2>
+            <p class="text-teal-100">প্রতি সপ্তাহে লেটেস্ট টিপস সরাসরি আপনার ইনবক্সে পেতে সাবস্ক্রাইব করুন।</p>
+        </div>
+
+        <form action="{% url 'subscribe_newsletter' %}" method="POST" class="flex w-full md:w-auto gap-3">
+            {% csrf_token %} <input type="email" name="email" required placeholder="আপনার ইমেইল দিন" 
+                   class="px-6 py-4 rounded-2xl bg-white/10 border border-white/20 focus:outline-none focus:bg-white/20 transition w-full md:w-80 placeholder:text-teal-200">
+            <button type="submit" class="px-8 py-4 bg-orange-500 hover:bg-orange-600 rounded-2xl font-bold transition">Join</button>
+        </form>
+    </div>
+    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+    </section>
+
+{% endblock %}
+
+    </body>
+</html>

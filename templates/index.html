@@ -1,0 +1,404 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/logo_2.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo_2.png' %}">
+
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/logo_2.png' %}">
+  <title>Soptok Chatterjee | Digital Marketer & Mentor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: 0, transform: 'translateY(40px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+          },
+          animation: { fadeUp: 'fadeUp 1s ease-out' }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans bg-white dark:bg-gray-950 transition-colors duration-300">
+
+
+<header id="header" class="fixed top-0 w-full z-50 bg-blue-300 dark:bg-gray-900/80 backdrop-blur shadow">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <div class="flex items-center space-x-4">
+      <img src="{% static 'images/logo.png' %}" class="h-20 w-auto object-contain transform scale-125" alt="Logo">
+      <div>
+        <h1 class="text-lg font-bold text-blue-800 dark:text-teal-400">Soptok Chatterjee</h1>
+        <p class="text-sm text-teal-600 dark:text-gray-400">Digital Marketer & Mentor</p>
+      </div>
+    </div>
+    <nav class="hidden md:flex gap-8">
+      <a href="{% url 'home' %}" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400">Home</a>
+      
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-teal-600 dark:text-gray-300 focus:outline-none">
+          Services
+          <svg class="w-4 h-4 mt-0.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute left-0 mt-3 w-48 bg-white dark:bg-gray-900 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <a href="{% url 'courses' %}" class="block px-5 py-3 hover:bg-indigo-50 dark:hover:bg-gray-800 rounded-t-xl dark:text-gray-300">📘 Courses</a>
+          <a href="{% url 'services' %}" class="block px-5 py-3 hover:bg-indigo-50 dark:hover:bg-gray-800 rounded-b-xl dark:text-gray-300">🛠 Services</a>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-teal-600 dark:text-gray-300 focus:outline-none">
+            Blog
+            <svg class="w-4 h-4 mt-0.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+        <div class="absolute left-0 mt-3 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 dark:border-gray-800 z-50">
+            <a href="{% url 'digital_marketing' %}" class="block px-5 py-3 hover:bg-teal-50 dark:hover:bg-gray-800 rounded-t-xl dark:text-gray-300 transition">🚀 Digital Marketing</a>
+            <a href="{% url 'freelancing' %}" class="block px-5 py-3 hover:bg-teal-50 dark:hover:bg-gray-800 dark:text-gray-300 transition">💻 Freelancing Hacks</a>
+            <a href="{% url 'corporate' %}" class="block px-5 py-3 hover:bg-teal-50 dark:hover:bg-gray-800 rounded-b-xl dark:text-gray-300 transition">📈 Corporate Growth</a>
+        </div>
+      </div>
+
+       <div class="relative group">
+    <button class="flex items-center gap-1 hover:text-teal-600 dark:text-gray-300 focus:outline-none">
+        Testimonials
+        <svg class="w-4 h-4 mt-0.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+
+    <div class="absolute left-0 mt-3 w-64 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 z-50">
+        
+        <a href="{% url 'certificates' %}" class="flex items-center px-5 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-all rounded-t-xl border-b border-gray-50">
+            <span class="mr-3 text-lg">🏅</span>
+            <span class="text-[15px]">Certificates</span>
+        </a>
+
+        <a href="{% url 'experience_certificates' %}" class="flex items-center px-5 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-all rounded-b-xl">
+            <span class="mr-3 text-lg">📄</span>
+            <span class="text-[15px]">Experience Certificates</span>
+        </a>
+    </div>
+</div>
+
+    </nav>
+    <div class="flex items-center space-x-4">
+      <a href="{% url 'free_consultation' %}" class="hidden md:inline-block bg-orange-500 text-white px-5 py-2 rounded-lg hover:bg-orange-600 transition shadow-lg font-bold">
+    Free Consultation
+</a>
+      <button id="themeToggle" class="text-xl p-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 transition">🌙</button>
+    </div>
+  </div>
+</header>
+
+{% if request.path == '/' %}
+<section class="relative w-full min-h-[600px] flex items-center bg-gray-900 overflow-hidden pt-28 md:pt-32">
+  <div class="absolute inset-0 z-0">
+    <img src="{% static 'images/hero-bg.jpg' %}" alt="Background" class="w-full h-full object-cover opacity-30 blur-sm">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="space-y-6 animate-fadeUp">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+        Grow Your Skill & Business with <br>
+        <span class="text-teal-400">Soptok Chatterjee</span>
+      </h1>
+      <div class="text-lg text-gray-300 space-y-4 text-justify">
+        <p>I am <span class="font-semibold text-white">Soptok Chatterjee</span>, Founder & CEO of <span class="text-orange-400">Drive To Traffic</span>.</p>
+        <p class="border-l-4 border-orange-500 pl-4 italic text-gray-400">"I am a results-driven Digital Marketing Expert and Business Growth Specialist with 8+ years of experience in SEO, paid advertising, and lead generation.
+As an NSDA Certified Digital Marketing Professional (Levels 3–6), I help businesses turn digital traffic into measurable revenue through data-driven strategies and scalable growth systems. I have successfully delivered 350+ projects for clients across 80+ countries and trained 1,200+ aspiring marketers to build career-ready skills.
+I don’t just market brands — I build sustainable growth engines.	
+."</p>
+      </div>
+      <div class="flex flex-wrap gap-4 pt-4">
+        <a href="#" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition transform hover:scale-105">Start Free Consultation</a>
+      </div>
+    </div>
+
+
+  <div class="hidden md:flex justify-end relative">
+  <div class="relative w-[400px] h-[400px]">
+    <img src="{% static 'images/home.jpg' %}" alt="Soptok Chatterjee" class="relative z-10 w-full h-full object-cover rounded-full border border-white/20 shadow-2xl">
+
+    <div id="qrBtn" class="absolute -bottom-4 -left-8 animate-bounce duration-[3000ms] z-20 cursor-pointer">
+      <div class="group relative">
+          <div class="bg-black/60 backdrop-blur-xl border border-[#d4af37]/40 p-3 rounded-2xl flex items-center gap-3 shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:border-[#d4af37] transition-all duration-500">
+              <div class="w-12 h-12 bg-white p-1 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src="{% static 'images/qrCode.png' %}" alt="QR" class="w-full h-full object-contain">
+              </div>
+              
+              <div class="pr-2">
+                  <p class="text-[9px] text-[#d4af37] font-bold uppercase tracking-widest leading-none mb-1">Connect Fast</p>
+                  <p class="text-[8px] text-gray-300 font-medium leading-tight">Scan for <br>Contact Info</p>
+              </div>
+
+              <div class="absolute inset-0 bg-[#d4af37]/5 rounded-2xl -z-10 group-hover:bg-[#d4af37]/10 transition-all"></div>
+          </div>
+          
+          <div class="absolute -top-1 -right-1 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4af37] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-[#d4af37]"></span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+{% endif %}
+
+
+
+<div class="{% if request.path != '/' %}pt-32{% endif %}">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+{% if request.path == '/' %}
+    <section class="py-24 bg-[#0a0a0a] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#d4af37] tracking-[0.4em] uppercase text-[10px] font-bold mb-4 block">Professional Solutions</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white">My <span class="italic text-[#d4af37]">Services</span></h2>
+                <div class="h-[1px] w-24 bg-[#d4af37]/30 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for service in services %}
+                <div class="group bg-[#111] border border-white/5 p-10 rounded-[40px] hover:border-[#d4af37]/30 transition-all duration-500 relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-[#d4af37]/5 rounded-full blur-3xl group-hover:bg-[#d4af37]/10 transition-all"></div>
+                    <div class="w-16 h-16 bg-black border border-white/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-[#d4af37]/20 transition-all duration-500">
+                        <i class="fas {{ service.icon }} text-2xl text-[#d4af37]"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-[#d4af37] transition-colors">{{ service.title }}</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">{{ service.description|truncatewords:20 }}</p>
+                    <a href="{% url 'services' %}#service-{{ service.id }}" class="inline-flex items-center text-white text-[10px] font-bold uppercase tracking-widest border-b border-white/10 hover:border-[#d4af37] pb-2 transition-all">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-[8px]"></i>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16">
+                <span class="text-[#d4af37] tracking-[0.4em] uppercase text-[10px] font-bold block mb-4">Learn from Expert</span>
+                <h2 class="text-4xl font-serif text-white">Premium <span class="italic text-[#d4af37]">Courses</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for course in courses %}
+                <div class="bg-[#111] border border-white/5 rounded-3xl overflow-hidden group hover:border-[#d4af37]/40 transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="{{ course.thumbnail.url }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-white mb-3">{{ course.title }}</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-2">{{ course.description }}</p>
+                        <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                            <span class="text-2xl font-bold text-white">৳{{ course.price }}</span>
+                            <a href="{% url 'courses' %}" class="bg-[#d4af37] text-black text-[10px] font-bold px-6 py-3 rounded-xl transition-all">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+   <section class="py-24 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <span class="text-[#d4af37] tracking-[0.4em] uppercase text-[10px] font-bold">Insights</span>
+                <h2 class="text-4xl font-serif text-white mt-2">Latest from <span class="italic text-[#d4af37]">Blog</span></h2>
+            </div>
+            <a href="{% url 'blog_list' %}" class="text-gray-500 hover:text-[#d4af37] text-xs uppercase tracking-widest transition-colors duration-300">View All →</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for blog in recent_blogs %}
+            <a href="{% url 'blog_detail' blog.slug %}" class="group block">
+                <div class="relative h-64 overflow-hidden rounded-2xl mb-6">
+                    {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    {% endif %}
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-300"></div>
+                </div>
+                
+                <div class="space-y-2">
+                    <span class="text-[#d4af37] text-[10px] font-bold uppercase tracking-wider">{{ blog.created_at|date:"M d, Y" }}</span>
+                    <h3 class="text-xl font-bold text-white group-hover:text-[#d4af37] transition-colors duration-300 leading-tight line-clamp-2">
+                        {{ blog.title }}
+                    </h3>
+                    <p class="text-gray-500 text-sm line-clamp-2 mt-2">
+                        {{ blog.content|striptags|truncatechars:100 }}
+                    </p>
+                </div>
+            </a>
+            {% empty %}
+            <p class="text-gray-500">No recent blogs found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<footer class="bg-[#0b1120] text-gray-400 py-16" ...>
+    </footer>
+
+
+
+<footer class="bg-[#0b1120] text-gray-400 py-16" style="border-top: 1px solid rgba(255, 255, 255, 0.1) !important;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="space-y-4">
+        <h3 class="text-white text-xl font-bold">Soptok Chatterjee</h3>
+        <p class="text-sm leading-relaxed">
+          Digital Marketing Expert & Business Growth Specialist.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-bold mb-5 uppercase tracking-wider text-sm">Quick Links</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/" class="hover:text-teal-400 transition-colors">Home</a></li>
+          <li><a href="/services/" class="hover:text-teal-400 transition-colors">Services</a></li>
+          <li><a href="/blog/" class="hover:text-teal-400 transition-colors">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+  <h3 class="text-white text-lg font-bold mb-5 uppercase tracking-wider text-sm">Contact Us</h3>
+  <ul class="space-y-4 text-sm">
+    <li class="flex items-center gap-3">
+      <i class="fa-solid fa-envelope text-teal-500"></i>
+      <a href="mailto:chatterjeesoptok@gmail.com" class="hover:text-white transition">chatterjeesoptok@gmail.com</a>
+    </li>
+    
+    <li class="flex items-center gap-3">
+      <i class="fa-solid fa-phone text-teal-500"></i>
+      <a href="tel:+8801303339101, +88 01340288222" class="hover:text-white transition">01303339101, 01340288222</a>
+    </li>
+  </ul>
+</div>
+ <div>
+    <h3 class="text-white text-lg font-bold mb-5 uppercase tracking-wider text-sm">Follow Me</h3>
+    
+    <div class="flex flex-wrap gap-3">
+        <a href="https://www.facebook.com/share/1SuRrLuuQL/" class="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-[#1877F2] transition-all duration-300 text-white shadow-lg">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/soptokchatterjee" class="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-[#0077B5] transition-all duration-300 text-white shadow-lg">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@soptokchatterjeeraju" class="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-[#000000] transition-all duration-300 text-white shadow-lg border border-transparent hover:border-white/20">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href=https://youtube.com/@soptokchattejee" class="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-[#FF0000] transition-all duration-300 text-white shadow-lg">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </div>
+</div>
+
+      
+    </div>
+    <div class="pt-8 text-center text-[11px] text-gray-500 tracking-widest uppercase" style="border-top: 1px solid rgba(255, 255, 255, 0.05);">
+      © 2026 <span class="text-teal-500 font-bold">Soptok Chatterjee</span>. Built with Passion for Growth.
+    </div>
+  </div>
+</footer>
+
+
+<div id="qrModal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/90 backdrop-blur-md transition-all duration-300">
+    <div id="modalBox" class="relative bg-[#111] border border-[#d4af37]/30 p-10 rounded-[40px] max-w-sm w-[90%] text-center shadow-2xl transform transition-all duration-300 scale-95 opacity-0">
+        <button id="closeModal" class="absolute top-5 right-5 text-gray-400 hover:text-[#d4af37] text-2xl">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <h3 class="text-[#d4af37] font-serif text-2xl mb-2">My Digital Card</h3>
+        <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-6">Scan to Connect Instantly</p>
+
+        <div class="bg-white p-4 rounded-3xl mb-6 inline-block">
+            <img src="{% static 'images/qrCode.png' %}" alt="Large QR" class="w-48 h-48 object-contain">
+        </div>
+        <p class="text-gray-400 text-sm italic">"Let's grow your business together!"</p>
+    </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const html = document.documentElement;
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+    toggleBtn.textContent = "☀️";
+  }
+  toggleBtn.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    if (html.classList.contains("dark")) {
+      toggleBtn.textContent = "☀️";
+      localStorage.theme = 'dark';
+    } else {
+      toggleBtn.textContent = "🌙";
+      localStorage.theme = 'light';
+    }
+  })
+
+
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const qrBtn = document.getElementById('qrBtn');
+    const qrModal = document.getElementById('qrModal');
+    const modalBox = document.getElementById('modalBox');
+    const closeModal = document.getElementById('closeModal');
+
+    if(qrBtn) {
+        qrBtn.addEventListener('click', function(e) {
+            console.log("QR Button Clicked!"); // চেক করার জন্য
+            qrModal.classList.remove('hidden');
+            qrModal.classList.add('flex');
+            
+            // ছোট একটা ডিলে দিয়ে এনিমেশন শুরু করা
+            setTimeout(() => {
+                modalBox.classList.remove('scale-95', 'opacity-0');
+                modalBox.classList.add('scale-100', 'opacity-100');
+            }, 20);
+        });
+    }
+
+    function hideModal() {
+        modalBox.classList.remove('scale-100', 'opacity-100');
+        modalBox.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            qrModal.classList.add('hidden');
+            qrModal.classList.remove('flex');
+        }, 300);
+    }
+
+    if(closeModal) {
+        closeModal.addEventListener('click', hideModal);
+    }
+
+    window.addEventListener('click', function(e) {
+        if (e.target === qrModal) {
+            hideModal();
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<title>Email Marketing Service | Drive To Traffic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: '#0f766e',
+        secondary: '#1e40af'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+</style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 via-teal-50 to-blue-50
+             dark:from-gray-950 dark:via-gray-900 dark:to-gray-950
+             text-gray-800 dark:text-gray-200 transition-all">
+
+<header id="header" class="fixed top-0 w-full z-50 bg-blue-300 dark:bg-gray-900/80 backdrop-blur shadow">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <div class="flex items-center space-x-3">
+      <img src="{% static 'logo.jpg' %}" class="h-10 w-auto">
+      <div>
+        <h1 class="text-lg font-bold text-blue-800 dark:text-teal-400">Soptok Chatterjee</h1>
+        <p class="text-sm text-teal-600 dark:text-gray-400">Digital Marketer & Mentor</p>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex gap-8">
+      <a href="/" class="hover:text-teal-600">Home</a>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-teal-600 focus:outline-none">
+          Services
+          <svg class="w-4 h-4 mt-0.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute left-0 mt-3 w-48 bg-white dark:bg-gray-900 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+          <a href="/course/" class="block px-5 py-3 hover:bg-indigo-50 dark:hover:bg-gray-800 rounded-t-xl">📘 Courses</a>
+          <a href="/service/" class="block px-5 py-3 hover:bg-indigo-50 dark:hover:bg-gray-800 rounded-b-xl">🛠 Services</a>
+        </div>
+      </div>
+      <a href="/blog/" class="hover:text-teal-600">Blog</a>
+    </nav>
+
+    <div class="flex items-center">
+      <a href="#contact" class="hidden md:inline-block bg-orange-500 text-white px-5 py-2 rounded-lg hover:bg-orange-600">Free Consultation</a>
+      <button id="themeToggle" class="ml-2 p-2 rounded-lg bg-gray-200 dark:bg-gray-800">🌙</button>
+    </div>
+  </div>
+</header>
+
+<section class="relative pt-40 pb-28 text-center overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-teal-600 via-blue-700 to-indigo-800 opacity-95"></div>
+  <div class="relative text-white reveal">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Email Marketing That Converts</h1>
+    <p class="max-w-2xl mx-auto text-lg text-gray-200 mb-8">Build relationships and boost sales with data-driven campaigns.</p>
+    <a href="#consultation" class="inline-block bg-orange-500 px-8 py-3 rounded-xl font-semibold hover:bg-orange-600 transition">Get Free Consultation</a>
+  </div>
+</section>
+
+<section class="py-24 bg-gradient-to-br from-teal-50 to-blue-100 dark:from-gray-900 dark:to-gray-950">
+  <h2 class="text-center text-4xl font-bold mb-16 reveal">Email Automation Flow</h2>
+  
+  
+  
+  <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-8 text-center reveal">
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">👤 Subscriber Joins</div>
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">📧 Welcome Email</div>
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">🎯 Value Emails</div>
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">💡 Offer Email</div>
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">🔁 Follow-up</div>
+  </div>
+</section>
+
+<section id="consultation" class="py-28 bg-gradient-to-r from-blue-700 to-teal-600 text-white text-center reveal">
+  <h2 class="text-4xl font-bold mb-4">Get a Free Email Marketing Strategy Call</h2>
+
+  <form method="POST" action="{% url 'contact_submit' %}" class="max-w-xl mx-auto bg-white rounded-2xl p-8 text-gray-800 space-y-4 shadow-2xl">
+    {% csrf_token %} <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border rounded focus:ring-2 focus:ring-teal-500 outline-none">
+    <input type="email" name="email" placeholder="Email Address" required class="w-full p-3 border rounded focus:ring-2 focus:ring-teal-500 outline-none">
+    <textarea name="goal" placeholder="Your Business Goal" class="w-full p-3 border rounded focus:ring-2 focus:ring-teal-500 outline-none" rows="4"></textarea>
+    <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition shadow-lg">
+      Request Free Consultation
+    </button>
+  </form>
+</section>
+
+<footer class="bg-gray-900 text-gray-300 py-12 text-center">
+  <p>© 2025 Drive To Traffic. All Rights Reserved.</p>
+</footer>
+
+<div id="leadPopup" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-[100]">
+  <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-md text-center relative mx-4">
+    <button onclick="closePopup()" class="absolute top-3 right-4 text-xl">✖</button>
+    <h3 class="text-2xl font-bold mb-3 dark:text-teal-400">Free Email Marketing Checklist</h3>
+    <p class="mb-4 dark:text-gray-300">Download our proven checklist to boost open rates.</p>
+    <form method="POST" action="{% url 'lead_capture' %}">
+        {% csrf_token %}
+        <input type="email" name="lead_email" placeholder="Enter your email" required class="w-full p-3 border rounded mb-4 text-gray-800">
+        <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded hover:bg-teal-700 transition">Get Free Guide</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Theme Toggle
+const html=document.documentElement;
+document.getElementById("themeToggle").onclick=()=>{ html.classList.toggle("dark"); }
+
+// Scroll Reveal Animation
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("active") })
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>{ observer.observe(el) });
+
+// Lead Popup Delay (8 Seconds)
+const popup=document.getElementById("leadPopup");
+setTimeout(() => {
+    if(!localStorage.getItem('popupShown')) {
+        popup.classList.remove("hidden");
+    }
+}, 8000);
+
+function closePopup(){
+    popup.classList.add("hidden");
+    localStorage.setItem('popupShown', 'true'); // একবার দেখালে আর দেখাবে না
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Corporate Growth | Soptok Chatterjee{% endblock %}
+
+{% block content %}
+<style>
+    /* গোল্ডেন থিমের জন্য কাস্টম গ্র্যাডিয়েন্ট */
+    .gold-gradient {
+        background: linear-gradient(135deg, #d4af37 0%, #f9e2af 50%, #b8860b 100%);
+    }
+    
+    /* লাক্সারি কার্ড যা মোড অনুযায়ী চেঞ্জ হবে */
+    .luxury-card {
+        @apply bg-white dark:bg-[#111111] border border-gray-100 dark:border-[#222222] transition-all duration-500;
+    }
+    
+    .luxury-card:hover {
+        @apply border-[#d4af37] shadow-xl dark:shadow-[#d4af37]/10;
+        box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+    }
+</style>
+
+<div class="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] text-gray-800 dark:text-gray-300 transition-colors duration-300">
+    
+    <section class="py-20 lg:py-32 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/50 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <span class="text-[#b8860b] dark:text-[#d4af37] tracking-[0.3em] uppercase text-xs font-bold mb-4 block">Executive Insights</span>
+                <h1 class="text-5xl md:text-7xl font-serif text-gray-900 dark:text-white mb-8">
+                    Corporate <span class="italic text-[#b8860b] dark:text-[#d4af37]">Growth</span> Strategy
+                </h1>
+                <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed font-light">
+                    বিজনেস স্কেলিং, লিডারশিপ এবং দীর্ঘমেয়াদী করপোরেট সাকসেসের জন্য প্রুভেন স্ট্র্যাটেজি। 
+                    আপনার স্বপ্নকে একটি ব্র্যান্ডে রূপান্তর করার গাইড।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 border-y border-gray-200 dark:border-white/5 py-12">
+                <div class="text-center border-r border-gray-200 dark:border-white/5">
+                    <div class="text-4xl font-light text-gray-900 dark:text-white mb-2">10X</div>
+                    <div class="text-[10px] uppercase tracking-widest text-[#b8860b] dark:text-[#d4af37] font-bold">Revenue Growth</div>
+                </div>
+                <div class="text-center border-r border-gray-200 dark:border-white/5">
+                    <div class="text-4xl font-light text-gray-900 dark:text-white mb-2">15+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-[#b8860b] dark:text-[#d4af37] font-bold">Global Partners</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-light text-gray-900 dark:text-white mb-2">A+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-[#b8860b] dark:text-[#d4af37] font-bold">Corporate Rating</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {% for post in posts %}
+                <article class="luxury-card group rounded-none flex flex-col md:flex-row overflow-hidden shadow-sm">
+                    <div class="w-full md:w-2/5 h-64 md:h-auto overflow-hidden">
+                        {% if post.thumbnail %}
+                        <img src="{{ post.thumbnail.url }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    
+                    <div class="w-full md:w-3/5 p-8 flex flex-col justify-center">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-[10px] text-[#b8860b] dark:text-[#d4af37] font-bold tracking-tighter uppercase">Strategy</span>
+                            <div class="h-[1px] w-8 bg-[#d4af37]/50"></div>
+                            <span class="text-[10px] text-gray-400 dark:text-gray-600 uppercase">{{ post.published_date|date:"F Y" }}</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-gray-900 dark:text-white mb-4 group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-colors leading-tight">
+                            {{ post.title }}
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-500 line-clamp-2 mb-6 font-light">
+                            {{ post.content|striptags|truncatewords:20 }}
+                        </p>
+                        <a href="{% url 'blog_detail' post.slug %}" class="inline-flex items-center gap-2 text-gray-900 dark:text-white text-xs font-bold tracking-widest uppercase hover:gap-4 transition-all">
+                            View Strategy <i class="fas fa-chevron-right text-[#b8860b] dark:text-[#d4af37]"></i>
+                        </a>
+                    </div>
+                </article>
+                {% empty %}
+                <div class="col-span-full text-center py-24 border border-dashed border-gray-200 dark:border-white/5">
+                    <p class="text-gray-400 dark:text-gray-600 italic">নতুন করপোরেট স্ট্র্যাটেজি শীঘ্রই যুক্ত করা হবে।</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

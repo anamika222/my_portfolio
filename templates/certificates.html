@@ -1,0 +1,406 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-32 bg-[#050505] min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center mb-20 animate-fadeUp">
+            <span class="text-[#d4af37] tracking-[0.4em] uppercase text-xs font-bold mb-4 block">NSDA Verified Skill</span>
+            <h1 class="text-5xl md:text-6xl font-serif text-white mb-6">NSDA <span class="italic text-[#d4af37]">Certificates</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
+                National Skills Development Authority (NSDA) certified expertise in Digital Marketing, Level 3 to Level 6.
+            </p>
+            <div class="h-[1px] w-24 bg-[#d4af37]/30 mx-auto mt-8"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L3_01.jpg' %}" alt="NSDA Level 3" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L3_01.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 3</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 01</p>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L3_02.jpg' %}" alt="NSDA Level 3" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L3_02.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 3</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 02</p>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L4_01.jpg' %}" alt="NSDA Level 4" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L4_01.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 4</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 01</p>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L4_02.jpg' %}" alt="NSDA Level 4" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L4_02.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 4</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 02</p>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L5_01.jpg' %}" alt="NSDA Level 5" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L5_01.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 5</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 01</p>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L5_02.jpg' %}" alt="NSDA Level 5" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L5_02.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 5</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 02</p>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L6_01.jpg' %}" alt="NSDA Level 6" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L6_01.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 6</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 01</p>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+                    <img src="{% static 'images/L6_02.jpg' %}" alt="NSDA Level 6" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
+                         <button onclick="openFullImage('{% static 'images/L6_02.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 text-center">
+                    <h3 class="text-white text-lg font-bold">NSDA Level 6</h3>
+                    <p class="text-gray-500 text-xs mt-1">Professional Certificate - Part 02</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<div class="mt-32 text-center mb-16 animate-fadeUp">
+            <span class="text-[#d4af37] tracking-[0.4em] uppercase text-xs font-bold mb-4 block">Others</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Professional <span class="italic text-[#d4af37]">Certifications</span></h2>
+            <div class="h-[1px] w-24 bg-[#d4af37]/30 mx-auto mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/adv_seo_aff.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/adv_seo_aff.png'%}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">Advanced SEO</h3>
+                    <p class="text-gray-500 text-[10px]">CodersTrust</p>
+                </div>
+            </div>
+
+            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/fb_ads_instructory.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/fb_ads_instructory.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">Facebook Ads</h3>
+                    <p class="text-gray-500 text-[10px]">Instructory</p>
+                </div>
+            </div>
+
+            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/10_min_scl.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/10_mim_scl.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">CV Writing</h3>
+                    <p class="text-gray-500 text-[10px]">10MS</p>
+                </div>
+            </div>
+
+            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/EMK.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/EMK.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">EMK Workshop</h3>
+                    <p class="text-gray-500 text-[10px]">EMK Center</p>
+                </div>
+            </div>
+
+               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/ESDP.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/ESDP.jpeg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">ESDP Workshop</h3>
+                    <p class="text-gray-500 text-[10px]">ESDP Center</p>
+                </div>
+            </div>
+
+               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/event_management.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/event_management.jpeg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">Event Management Workshop</h3>
+                    <p class="text-gray-500 text-[10px]">Event Management Center</p>
+                </div>
+            </div>
+
+               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/diploma_in_cse.jpg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/diploma_in_cse.jpg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">Diploma in CSE</h3>
+                    <p class="text-gray-500 text-[10px]">CSE Department</p>
+                </div>
+            </div>
+
+               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/google_ads_instructory.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/google_ads_instructory.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">Google Ads Instructor Training</h3>
+                    <p class="text-gray-500 text-[10px]">Instructory Academy</p>
+                </div>
+            </div>
+
+            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+                <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+                    <img src="{% static 'images/hablu_korbe_marketing.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                         <button onclick="openFullImage('{% static 'images/hablu_korbe_marketing.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white text-xs font-bold truncate">Achievement</h3>
+                    <p class="text-gray-500 text-[10px]">Instructory Academy</p>
+                </div>
+            </div>
+
+        
+
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/modern_office_management.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/modern_office_management.jpeg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Modern Office Management</h3>
+            <p class="text-gray-500 text-[10px]">Ministry of Youth and Sports</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/office_management.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/office_management.jpeg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Office Management</h3>
+            <p class="text-gray-500 text-[10px]">Ministry of Youth and Sports</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/mobile_game.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/Mobile_game.jpeg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Mobile Game Development</h3>
+            <p class="text-gray-500 text-[10px]">Govt Project</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/SEO.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/SEO.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Search Engine Optimization</h3>
+            <p class="text-gray-500 text-[10px]">Instructory</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/social_media_marketing.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/social_media_marketing.jpeg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Social Media Marketing</h3>
+            <p class="text-gray-500 text-[10px]">Instructory</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/team_lead.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/team_lead.jpeg' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Team Leadership</h3>
+            <p class="text-gray-500 text-[10px]">Creatix IT</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/the_book_of_fibrr.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/the_book_of_fibrr.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">The Book of FIBRR</h3>
+            <p class="text-gray-500 text-[10px]">Instructory</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/upwork.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/upwork.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Achievement</h3>
+            <p class="text-gray-500 text-[10px]">Instructory</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/web_crapping.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/web_crapping.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">Web Scrapping</h3>
+            <p class="text-gray-500 text-[10px]">Instructory</p>
+        </div>
+    </div>
+
+    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+        <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
+            <img src="{% static 'images/youtube.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
+                <button onclick="openFullImage('{% static 'images/youtube.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+            </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-white text-xs font-bold truncate">YouTube Tutorial</h3>
+            <p class="text-gray-500 text-[10px]">Instructory</p>
+        </div>
+    </div>
+
+</div> 
+
+
+<div id="imageModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 p-4 backdrop-blur-md" onclick="closeFullImage()">
+    <button class="absolute top-10 right-10 text-white text-4xl">&times;</button>
+    <img id="fullImage" src="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain p-2">
+</div>
+
+<script>
+function openFullImage(src) {
+    document.getElementById('fullImage').src = src;
+    document.getElementById('imageModal').classList.remove('hidden');
+    document.getElementById('imageModal').classList.add('flex');
+}
+function closeFullImage() {
+    document.getElementById('imageModal').classList.add('hidden');
+    document.getElementById('imageModal').classList.remove('flex');
+}
+</script>
+{% endblock %}

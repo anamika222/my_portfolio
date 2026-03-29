@@ -1,0 +1,131 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<section class="py-24 bg-[#0a0a0a] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#d4af37]/5 rounded-full blur-[120px]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-20">
+            <span class="text-[#d4af37] tracking-[0.4em] uppercase text-[10px] font-bold mb-4 block animate-pulse">Excellence in Marketing</span>
+            <h1 class="text-5xl md:text-7xl font-serif text-white mb-6">
+                Strategic <span class="italic text-[#d4af37]">Solutions</span>
+            </h1>
+            <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+                আপনার ব্যবসাকে ডিজিটাল প্ল্যাটফর্মে প্রতিষ্ঠিত করতে আমি দিচ্ছি প্রিমিয়াম মার্কেটিং সলিউশন। ডেটা এবং ক্রিয়েটিভিটির সমন্বয়ে আপনার ব্র্যান্ডকে পৌঁছে দেব অনন্য উচ্চতায়।
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+            {% for service in services %}
+            <div id="service-{{ service.id }}" class="group bg-[#111111] border border-white/5 p-8 rounded-3xl hover:border-[#d4af37]/40 transition-all duration-500 relative scroll-mt-24">
+                <div class="text-[#d4af37] text-4xl mb-6 transform group-hover:scale-110 transition-transform">
+                    <i class="fas {{ service.icon }}"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-[#d4af37] transition-colors">{{ service.title }}</h3>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">{{ service.description }}</p>
+                
+                <ul class="space-y-3 mb-8">
+                    {% for feature in service.get_features_list %}
+                    <li class="flex items-center text-[11px] text-gray-300 tracking-wide">
+                        <i class="fas fa-check text-[#d4af37] mr-3 text-[10px]"></i> {{ feature.strip }}
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <a href="https://wa.me/8801303339101" class="inline-block w-full text-center border border-[#d4af37]/30 text-white py-3 rounded-xl font-bold text-[10px] tracking-widest uppercase hover:bg-[#d4af37] hover:text-black transition-all">
+                    Inquire Strategy
+                </a>
+            </div>
+            {% empty %}
+            <p class="text-gray-500 text-center col-span-full italic">নতুন সার্ভিস শীঘ্রই আসছে...</p>
+            {% endfor %}
+        </div>
+
+        <div class="border-t border-white/5 pt-24 mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif text-white uppercase tracking-[0.2em]">The <span class="text-[#d4af37]">Process</span></h2>
+                <p class="text-gray-600 mt-2 text-sm">কিভাবে আমি আপনার প্রজেক্টের সফল্য নিশ্চিত করি</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="text-center group">
+                    <div class="text-6xl font-serif text-white/5 group-hover:text-[#d4af37]/10 transition-colors mb-[-30px]">01</div>
+                    <h4 class="text-white font-bold mb-3">Audit & Discovery</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">আপনার বর্তমান অবস্থা এবং লক্ষ্য বিশ্লেষণ করা।</p>
+                </div>
+                <div class="text-center group">
+                    <div class="text-6xl font-serif text-white/5 group-hover:text-[#d4af37]/10 transition-colors mb-[-30px]">02</div>
+                    <h4 class="text-white font-bold mb-3">Custom Strategy</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">আপনার বিজনেসের জন্য ইউনিক রোডম্যাপ তৈরি।</p>
+                </div>
+                <div class="text-center group">
+                    <div class="text-6xl font-serif text-white/5 group-hover:text-[#d4af37]/10 transition-colors mb-[-30px]">03</div>
+                    <h4 class="text-white font-bold mb-3">Launch & Execute</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">ক্যাম্পেইন এবং কন্টেন্ট লাইভ করার নিখুঁত কাজ।</p>
+                </div>
+                <div class="text-center group">
+                    <div class="text-6xl font-serif text-white/5 group-hover:text-[#d4af37]/10 transition-colors mb-[-30px]">04</div>
+                    <h4 class="text-white font-bold mb-3">Data Optimization</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">রেজাল্ট ট্র্যাক করে সর্বোচ্চ আরওআই নিশ্চিত করা।</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto mb-32">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-serif text-white uppercase tracking-widest">General <span class="text-[#d4af37]">Questions</span></h2>
+            </div>
+            <div class="space-y-4">
+                {% for faq in faqs %}
+                <details class="group bg-[#111] border border-white/5 rounded-2xl p-6 transition-all hover:border-[#d4af37]/30">
+                    <summary class="list-none flex justify-between items-center cursor-pointer text-white font-semibold">
+                        {{ faq.question }}
+                        <span class="text-[#d4af37] group-open:rotate-180 transition-transform">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">
+                        {{ faq.answer }}
+                    </p>
+                </details>
+                {% empty %}
+                <p class="text-gray-500 text-center italic">কোনো প্রশ্ন পাওয়া যায়নি।</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="contact-section" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center border-t border-white/5 pt-24">
+            <div>
+                <span class="text-[#d4af37] tracking-[0.4em] uppercase text-[10px] font-bold mb-4 block">Get a Quote</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Ready to grow your <br><span class="italic text-[#d4af37]">Business?</span></h2>
+                <p class="text-gray-500 mb-8">আপনার প্রজেক্ট নিয়ে সরাসরি কথা বলুন। আমি ২৪ ঘণ্টার মধ্যে রিপ্লাই দেওয়ার চেষ্টা করি।</p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center text-gray-400 gap-4">
+                        <i class="fab fa-whatsapp text-[#d4af37]"></i>
+                        <span>+880 1303 339101</span>
+                    </div>
+                    <div class="flex items-center text-gray-400 gap-4">
+                        <i class="fas fa-envelope text-[#d4af37]"></i>
+                        <span>contact@yourdomain.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#111] p-10 rounded-[30px] border border-white/5 shadow-2xl">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="mb-6 p-4 bg-[#d4af37]/10 border border-[#d4af37]/20 rounded-xl text-[#d4af37] text-sm">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

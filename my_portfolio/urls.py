@@ -47,7 +47,7 @@ urlpatterns = [
     path('subscribe/', views.subscribe_newsletter, name='subscribe_newsletter'),
     path('blog/corporate-growth/', views.corporate_view, name='corporate'),
     path('contact/', views.contact_view, name='contact'),
-    path('fix-my-login-xyz/', views.force_password_reset, name='force_password_reset'),
+    
     # উদাহরণ:
 
     path('experience-certificates/', views.exp_page, name='experience_certificate'),

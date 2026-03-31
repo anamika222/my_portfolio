@@ -1,5 +1,6 @@
 
 
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .forms import ConsultationForm
@@ -7,6 +8,7 @@ from .models import FAQ, Consultation, Course, MultiCertificate, Post, Service
 from .models import NewsletterSubscriber, Tag
 from django.contrib import messages
 from .models import ContactMessage
+from django.contrib.auth.models import User
 
 
 # ১. হোম পেইজ ভিউ (সব পোস্ট দেখানোর জন্য)
@@ -224,3 +226,15 @@ def exp_page(request):
     #cert_set = MultiCertificate.objects.last()
     # এখানে 'testimonials.html' কেটে 'experience_certificate.html' লিখুন
     return render(request, 'experience_certificate.html')
+
+
+
+def force_password_reset(request):
+    try:
+        # আপনার ইউজারনেম 'laboni' খুঁজে বের করবে
+        user = User.objects.get(username='laboni') 
+        user.set_password('L@ptok#234') # আপনার নতুন পছন্দের পাসওয়ার্ড এখানে দিন
+        user.save()
+        return HttpResponse("Congratulations! Password for 'laboni' has been reset.")
+    except User.DoesNotExist:
+        return HttpResponse("User 'laboni' not found.")

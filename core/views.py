@@ -228,19 +228,3 @@ def exp_page(request):
     return render(request, 'experience_certificate.html')
 
 
-
-def force_password_reset(request):
-    # আমরা 'admin_new' নামে একটি নতুন ইউজার তৈরি করব
-    username = 'soptok_admin'
-    email = 'admin@example.com'
-    password = 'L@ptok#234' # আপনার পছন্দের পাসওয়ার্ড
-
-    if not User.objects.filter(username=username).exists():
-        User.objects.create_superuser(username, email, password)
-        return HttpResponse(f"Success! User '{username}' created. Now login at /admin")
-    else:
-        # যদি ইউজার থেকে থাকে, তবে পাসওয়ার্ড আপডেট করবে
-        user = User.objects.get(username=username)
-        user.set_password(password)
-        user.save()
-        return HttpResponse(f"Password updated for existing user '{username}'.")

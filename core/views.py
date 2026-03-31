@@ -228,3 +228,29 @@ def exp_page(request):
     return render(request, 'experience_certificate.html')
 
 
+
+
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def force_password_reset(request):
+    username = 'soptok'
+    password = 'Soptok@#$234' # এটি আপনার একদম নতুন পাসওয়ার্ড
+    
+    # ১. পুরনো ইউজার থাকলে তা মুছে ফেলবে
+    User.objects.filter(username=username).delete()
+    
+    # ২. নতুন করে সুপার ইউজার তৈরি করবে
+    new_user = User.objects.create_superuser(
+        username=username, 
+        email='admin@example.com', 
+        password=password
+    )
+    
+    # ৩. অতিরিক্ত নিরাপত্তা হিসেবে ইউজারকে একটিভ করে দেবে
+    new_user.is_active = True
+    new_user.is_staff = True
+    new_user.is_superuser = True
+    new_user.save()
+    
+    return HttpResponse(f"Everything Cleaned! User '{username}' created. Login with: {password}")

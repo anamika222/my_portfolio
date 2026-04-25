@@ -104,29 +104,26 @@
     </div>
   </div>
 
- <div id="mobileMenu" class="fixed inset-y-0 right-0 w-[280px] bg-white dark:bg-gray-950 z-[999] transform translate-x-full transition-transform duration-300 shadow-2xl md:hidden border-l border-gray-100 dark:border-gray-800">
+ <div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 bg-white dark:bg-gray-900 z-[1000] transform translate-x-full transition-transform duration-300 shadow-2xl md:hidden">
     <div class="p-6 flex flex-col h-full">
-        <div class="flex justify-between items-center mb-8 pb-4 border-b border-gray-100 dark:border-gray-800">
-            <span class="font-bold text-xl text-blue-800 dark:text-teal-400">Navigation</span>
-            <button id="closeMenu" class="text-3xl text-gray-500 hover:text-red-500 transition-colors">&times;</button>
+        <div class="flex justify-between items-center mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">
+            <span class="font-bold text-xl text-blue-800 dark:text-teal-400">Menu</span>
+            <button id="closeMenu" class="text-3xl text-gray-500 hover:text-red-500">&times;</button>
         </div>
-        
-        <nav class="flex flex-col gap-6 text-[17px] font-bold">
-            <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Home</a>
-            <a href="{% url 'courses' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Courses</a>
-            <a href="{% url 'services' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Services</a>
-            <a href="{% url 'blog_list' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Blog</a>
-            
-            <hr class="border-gray-100 dark:border-gray-800">
-            
-            <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-4 rounded-xl text-center font-bold shadow-lg active:scale-95 transition-all">
-                Get Consultation
-            </a>
+        <nav class="flex flex-col gap-6 text-lg font-bold">
+            <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Home</a>
+            <a href="{% url 'courses' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Courses</a>
+            <a href="{% url 'services' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Services</a>
+            <a href="{% url 'blog_list' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Blog</a>
+            <hr class="dark:border-gray-800">
+            <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-3 rounded-xl text-center font-bold">Consultation</a>
         </nav>
     </div>
 </div>
 
-<div id="menuOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[998] hidden md:hidden"></div>
+<div id="menuOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[900] hidden"></div>
+
+
 </header>
 
 
@@ -403,28 +400,32 @@
 </div>
 
 <script>
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.getElementById('closeMenu');
+const menuOverlay = document.getElementById('menuOverlay');
 
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  const menuOverlay = document.getElementById('menuOverlay');
-
-  function toggleMenu() {
+function toggleMenu() {
+    // মেনুটি স্লাইড ইন/আউট করবে
     mobileMenu.classList.toggle('translate-x-full');
+    
+    // ওভারলে (পেছনের কালো রঙ) দেখাবে বা লুকাবে
     menuOverlay.classList.toggle('hidden');
 
-    if (menuOverlay.classList.contains('hidden')) {
-        menuOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // পেছনের স্ক্রলিং বন্ধ করবে
+    // বডি স্ক্রল কন্ট্রোল
+    if (!mobileMenu.classList.contains('translate-x-full')) {
+        // যদি মেনু ওপেন থাকে
+        document.body.style.overflow = 'hidden'; 
     } else {
-        menuOverlay.classList.add('hidden');
-        document.body.style.overflow = 'auto'; // স্ক্রলিং আবার চালু করবে
+        // যদি মেনু বন্ধ থাকে
+        document.body.style.overflow = 'auto';
     }
-  }
+}
 
-  mobileMenuBtn.addEventListener('click', toggleMenu);
-  closeMenu.addEventListener('click', toggleMenu);
-  menuOverlay.addEventListener('click', toggleMenu);
+// ইভেন্ট লিসেনারগুলো
+mobileMenuBtn.addEventListener('click', toggleMenu);
+closeMenu.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
 
   const toggleBtn = document.getElementById("themeToggle");
   const html = document.documentElement;

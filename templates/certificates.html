@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-<section class="py-32 bg-[#050505] min-h-screen">
+<section class="py-20 md:py-32 bg-[#050505] min-h-screen">
     <div class="max-w-7xl mx-auto px-6">
         
         <div class="text-center mb-20 animate-fadeUp">
             <span class="text-[#d4af37] tracking-[0.4em] uppercase text-xs font-bold mb-4 block">NSDA Verified Skill</span>
-            <h1 class="text-5xl md:text-6xl font-serif text-white mb-6">NSDA <span class="italic text-[#d4af37]">Certificates</span></h1>
+            <h1 class="text-3xl md:text-5xl font-serif text-white mb-6">NSDA <span class="italic text-[#d4af37]">Certificates</span></h1>
             <p class="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
                 National Skills Development Authority (NSDA) certified expertise in Digital Marketing, Level 3 to Level 6.
             </p>
@@ -16,7 +16,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[24px] md:rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
                 <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
                     <img src="{% static 'images/L3_01.jpg' %}" alt="NSDA Level 3" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
@@ -29,8 +29,8 @@
                 </div>
             </div>
 
-            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
-                <div class="relative overflow-hidden rounded-[24px] aspect-[4/3] bg-gray-900 mb-6">
+            <div class="group relative bg-[#111] border border-white/5 p-4 rounded-[24px] md:rounded-[32px] overflow-hidden transition-all duration-500 hover:border-[#d4af37]/40 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-[18px] md:rounded-[32px]  aspect-[4/3] bg-gray-900 mb-6">
                     <img src="{% static 'images/L3_02.jpg' %}" alt="NSDA Level 3" class="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
                          <button onclick="openFullImage('{% static 'images/L3_02.jpg' %}')" class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#d4af37] transition-colors">Zoom View</button>
@@ -126,17 +126,17 @@
 
 
 
-<div class="mt-32 text-center mb-16 animate-fadeUp">
+<div class="mt-20 md:mt-32 text-center mb-16 animate-fadeUp">
             <span class="text-[#d4af37] tracking-[0.4em] uppercase text-xs font-bold mb-4 block">Others</span>
-            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Professional <span class="italic text-[#d4af37]">Certifications</span></h2>
+            <h2 class="text-2xl md:text-4xl font-serif text-white mb-6">Professional <span class="italic text-[#d4af37]">Certifications</span></h2>
             <div class="h-[1px] w-24 bg-[#d4af37]/30 mx-auto mt-6"></div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             
-            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+            <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
-                    <img src="{% static 'images/adv_seo_aff.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500">
+                    <img src="{% static 'images/adv_seo_aff.png' %}" class="w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-all duration-500">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
                          <button onclick="openFullImage('{% static 'images/adv_seo_aff.png'%}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
                     </div>
@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+            <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/fb_ads_instructory.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -160,11 +160,11 @@
                 </div>
             </div>
 
-            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+            <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/10_min_scl.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
-                         <button onclick="openFullImage('{% static 'images/10_mim_scl.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                         <button onclick="openFullImage('{% static 'images/10_min_scl.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
                     </div>
                 </div>
                 <div class="text-center">
@@ -173,7 +173,7 @@
                 </div>
             </div>
 
-            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+            <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/EMK.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -186,7 +186,7 @@
                 </div>
             </div>
 
-               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+               <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/ESDP.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -199,7 +199,7 @@
                 </div>
             </div>
 
-               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+               <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/event_management.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -212,7 +212,7 @@
                 </div>
             </div>
 
-               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+               <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/diploma_in_cse.jpg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -225,7 +225,7 @@
                 </div>
             </div>
 
-               <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+               <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/google_ads_instructory.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -238,7 +238,7 @@
                 </div>
             </div>
 
-            <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+            <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
                 <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
                     <img src="{% static 'images/hablu_korbe_marketing.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -254,7 +254,7 @@
         
 
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/modern_office_management.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -267,7 +267,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/office_management.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -280,7 +280,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/mobile_game.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -293,7 +293,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/SEO.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -306,7 +306,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/social_media_marketing.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -319,7 +319,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/team_lead.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -332,7 +332,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/the_book_of_fibrr.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -345,7 +345,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/upwork.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
@@ -358,11 +358,11 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
-            <img src="{% static 'images/web_crapping.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+            <img src="{% static 'images/web_scrapping.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">
-                <button onclick="openFullImage('{% static 'images/web_crapping.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
+                <button onclick="openFullImage('{% static 'images/web_scrapping.png' %}')" class="bg-[#d4af37] text-black text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">Zoom View</button>
             </div>
         </div>
         <div class="text-center">
@@ -371,7 +371,7 @@
         </div>
     </div>
 
-    <div class="group bg-[#111] border border-white/5 p-3 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
+    <div class="group bg-[#111] border border-white/5 p-2.5 rounded-2xl transition-all duration-500 hover:border-[#d4af37]/40">
         <div class="relative overflow-hidden rounded-xl aspect-video bg-gray-900 mb-3">
             <img src="{% static 'images/youtube.png' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
             <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-all">

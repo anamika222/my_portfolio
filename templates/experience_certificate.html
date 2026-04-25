@@ -1,112 +1,123 @@
 {% extends 'index.html' %}
 {% load static %}
 
+{% block title %}Certificates | Soptok Chatterjee{% endblock %}
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificates | Soptok Chatterjee</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* ছবি বড় হওয়ার সময় স্মুথ এনিমেশন */
-        #lightbox-modal {
-            transition: opacity 0.3s ease-in-out;
-            display: none;
-        }
-        #lightbox-modal.active {
-            display: flex;
-            opacity: 1;
-        }
-    </style>
-</head>
-<body class="bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+<style>
+    /* লাইটবক্স এনিমেশন */
+    #lightbox-modal {
+        transition: opacity 0.3s ease-in-out;
+        display: none;
+    }
+    #lightbox-modal.active {
+        display: flex;
+        opacity: 1;
+    }
+    /* স্ক্রলবার হাইড করার জন্য (ঐচ্ছিক) */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+</style>
 
-
-    <div class="max-w-6xl mx-auto px-6 py-12">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 dark:text-white mb-4">
+<div class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300 pt-20 md:pt-28 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-12">
+        
+        <div class="text-center mb-12 md:mb-16">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-800 dark:text-white mb-4 leading-tight">
                 Professional <span class="text-indigo-600">Certifications</span>
             </h1>
-            <div class="h-1.5 w-24 bg-indigo-600 mx-auto rounded-full mb-6"></div>
+            <div class="h-1.5 w-20 md:w-24 bg-indigo-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-lg mx-auto">
+                আমার অর্জিত প্রফেশনাল সার্টিফিকেটগুলো বিস্তারিত দেখতে ছবির ওপর ক্লিক করুন।
+            </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             
-            <div class="group cursor-pointer bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-xl transition-all duration-500 hover:-translate-y-3" 
+            <div class="group cursor-pointer bg-white dark:bg-slate-900 p-3 md:p-4 rounded-[1.5rem] md:rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 dark:border-slate-800" 
                  onclick="openLightbox('{% static 'images/akr.jpg' %}')">
-                <div class="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 flex items-center justify-center">
-                    <img src="{% static 'images/akr.jpg' %}" alt="AKR" class="w-full h-full object-contain p-2">
+                <div class="overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center relative">
+                    <img src="{% static 'images/akr.jpg' %}" alt="AKR Technology" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <div class="mt-4 text-center pb-2">
-                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">AKR Technology</h3>
-                    <p class="text-sm text-indigo-500">Click to Preview</p>
+                    <h3 class="text-base md:text-lg font-bold text-slate-800 dark:text-white">AKR Technology</h3>
+                    <p class="text-[10px] md:text-sm text-indigo-500 font-medium mt-1 uppercase tracking-wider">
+                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Preview
+                    </p>
                 </div>
             </div>
 
-            <div class="group cursor-pointer bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-xl transition-all duration-500 hover:-translate-y-3" 
+            <div class="group cursor-pointer bg-white dark:bg-slate-900 p-3 md:p-4 rounded-[1.5rem] md:rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 dark:border-slate-800" 
                  onclick="openLightbox('{% static 'images/exp_cer_soptok_infinity.jpg' %}')">
-                <div class="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 flex items-center justify-center">
-                    <img src="{% static 'images/exp_cer_soptok_infinity.jpg' %}" alt="Infinity" class="w-full h-full object-contain p-2">
+                <div class="overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center relative">
+                    <img src="{% static 'images/exp_cer_soptok_infinity.jpg' %}" alt="Infinity Technology" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <div class="mt-4 text-center pb-2">
-                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">Infinity Technology</h3>
-                    <p class="text-sm text-indigo-500">Click to Preview</p>
+                    <h3 class="text-base md:text-lg font-bold text-slate-800 dark:text-white">Infinity Technology</h3>
+                    <p class="text-[10px] md:text-sm text-indigo-500 font-medium mt-1 uppercase tracking-wider">
+                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Preview
+                    </p>
                 </div>
             </div>
 
-            <div class="group cursor-pointer bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-xl transition-all duration-500 hover:-translate-y-3" 
+            <div class="group cursor-pointer bg-white dark:bg-slate-900 p-3 md:p-4 rounded-[1.5rem] md:rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 dark:border-slate-800" 
                  onclick="openLightbox('{% static 'images/exp_elel_12.jpg' %}')">
-                <div class="overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 flex items-center justify-center">
-                    <img src="{% static 'images/exp_elel_12.jpg' %}" alt="e-Learning" class="w-full h-full object-contain p-2">
+                <div class="overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center relative">
+                    <img src="{% static 'images/exp_elel_12.jpg' %}" alt="e-Learning" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <div class="mt-4 text-center pb-2">
-                    <h3 class="text-lg font-bold text-slate-800 dark:text-white">e-Learning & Earning</h3>
-                    <p class="text-sm text-indigo-500">Click to Preview</p>
+                    <h3 class="text-base md:text-lg font-bold text-slate-800 dark:text-white">e-Learning & Earning</h3>
+                    <p class="text-[10px] md:text-sm text-indigo-500 font-medium mt-1 uppercase tracking-wider">
+                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Preview
+                    </p>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-black/90 items-center justify-center p-4 md:p-10" onclick="closeLightbox()">
-        <button class="absolute top-5 right-5 text-white text-4xl hover:text-indigo-400 transition">
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-black/95 items-center justify-center p-2 md:p-10 cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-4 right-4 md:top-8 md:right-8 text-white text-3xl md:text-4xl hover:text-indigo-400 transition-all z-[110]">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <img id="lightbox-img" src="" alt="Full View" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300 scale-95">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="Full View" class="max-w-full max-h-full rounded-md shadow-2xl transition-transform duration-300 scale-95 cursor-default" onclick="event.stopPropagation()">
+        </div>
     </div>
+</div>
 
-    <script>
-        function openLightbox(imgSrc) {
-            const modal = document.getElementById('lightbox-modal');
-            const fullImg = document.getElementById('lightbox-img');
-            
-            fullImg.src = imgSrc;
-            modal.classList.add('active');
-            // পপ-আপ হওয়ার সময় একটু জুম ইফেক্ট
-            setTimeout(() => {
-                fullImg.classList.remove('scale-95');
-                fullImg.classList.add('scale-100');
-            }, 10);
-        }
+<script>
+    function openLightbox(imgSrc) {
+        const modal = document.getElementById('lightbox-modal');
+        const fullImg = document.getElementById('lightbox-img');
+        
+        fullImg.src = imgSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // স্ক্রলিং বন্ধ করবে
+        
+        setTimeout(() => {
+            fullImg.classList.remove('scale-95');
+            fullImg.classList.add('scale-100');
+        }, 10);
+    }
 
-        function closeLightbox() {
-            const modal = document.getElementById('lightbox-modal');
-            const fullImg = document.getElementById('lightbox-img');
-            
-            fullImg.classList.remove('scale-100');
-            fullImg.classList.add('scale-95');
-            modal.classList.remove('active');
-        }
+    function closeLightbox() {
+        const modal = document.getElementById('lightbox-modal');
+        const fullImg = document.getElementById('lightbox-img');
+        
+        fullImg.classList.remove('scale-100');
+        fullImg.classList.add('scale-95');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // স্ক্রলিং চালু করবে
+    }
 
-        // কীবোর্ড এর Esc বাটন চাপলে ক্লোজ হবে
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
-
-</body>
-</html>
+    // কীবোর্ড Esc বাটন সাপোর্ট
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+</script>
 {% endblock %}

@@ -104,26 +104,29 @@
     </div>
   </div>
 
-  <div id="mobileMenu" class="fixed inset-y-0 right-0 w-64 bg-white dark:bg-gray-900 z-[60] transform translate-x-full transition-transform duration-300 shadow-2xl md:hidden">
+ <div id="mobileMenu" class="fixed inset-y-0 right-0 w-[280px] bg-white dark:bg-gray-950 z-[999] transform translate-x-full transition-transform duration-300 shadow-2xl md:hidden border-l border-gray-100 dark:border-gray-800">
     <div class="p-6 flex flex-col h-full">
-      <div class="flex justify-between items-center mb-8">
-        <span class="font-bold text-blue-800 dark:text-teal-400">Menu</span>
-        <button id="closeMenu" class="text-2xl text-gray-500">&times;</button>
-      </div>
-      <nav class="flex flex-col gap-5 text-lg">
-        <a href="{% url 'home' %}" class="hover:text-teal-600 dark:text-gray-300">Home</a>
-        <a href="{% url 'courses' %}" class="hover:text-teal-600 dark:text-gray-300">Courses</a>
-        <a href="{% url 'services' %}" class="hover:text-teal-600 dark:text-gray-300">Services</a>
-        <a href="{% url 'blog_list' %}" class="hover:text-teal-600 dark:text-gray-300">Blog</a>
-        <a href="{% url 'certificates' %}" class="hover:text-teal-600 dark:text-gray-300">Certificates</a>
-        <hr class="border-gray-200 dark:border-gray-800">
-        <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-3 rounded-lg text-center font-bold">
-          Consultation
-        </a>
-      </nav>
+        <div class="flex justify-between items-center mb-8 pb-4 border-b border-gray-100 dark:border-gray-800">
+            <span class="font-bold text-xl text-blue-800 dark:text-teal-400">Navigation</span>
+            <button id="closeMenu" class="text-3xl text-gray-500 hover:text-red-500 transition-colors">&times;</button>
+        </div>
+        
+        <nav class="flex flex-col gap-6 text-[17px] font-bold">
+            <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Home</a>
+            <a href="{% url 'courses' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Courses</a>
+            <a href="{% url 'services' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Services</a>
+            <a href="{% url 'blog_list' %}" class="text-gray-800 dark:text-gray-100 hover:text-teal-600 transition-colors">Blog</a>
+            
+            <hr class="border-gray-100 dark:border-gray-800">
+            
+            <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-4 rounded-xl text-center font-bold shadow-lg active:scale-95 transition-all">
+                Get Consultation
+            </a>
+        </nav>
     </div>
-  </div>
-  <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-[55] hidden md:hidden"></div>
+</div>
+
+<div id="menuOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[998] hidden md:hidden"></div>
 </header>
 
 
@@ -409,6 +412,14 @@
   function toggleMenu() {
     mobileMenu.classList.toggle('translate-x-full');
     menuOverlay.classList.toggle('hidden');
+
+    if (menuOverlay.classList.contains('hidden')) {
+        menuOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // পেছনের স্ক্রলিং বন্ধ করবে
+    } else {
+        menuOverlay.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // স্ক্রলিং আবার চালু করবে
+    }
   }
 
   mobileMenuBtn.addEventListener('click', toggleMenu);

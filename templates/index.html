@@ -400,106 +400,95 @@
 </div>
 
 <script>
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const closeMenu = document.getElementById('closeMenu');
-const menuOverlay = document.getElementById('menuOverlay');
+    // --- মেনুবার এবং ওভারলে লজিক (Updated) ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
 
-function toggleMenu() {
-    // মেনুটি স্লাইড ইন/আউট করবে
-    mobileMenu.classList.toggle('translate-x-full');
-    
-    // ওভারলে (পেছনের কালো রঙ) দেখাবে বা লুকাবে
-    menuOverlay.classList.toggle('hidden');
+    function toggleMenu() {
+        const isOpening = mobileMenu.classList.contains('translate-x-full');
 
-    // বডি স্ক্রল কন্ট্রোল
-    if (!mobileMenu.classList.contains('translate-x-full')) {
-        // যদি মেনু ওপেন থাকে
-        document.body.style.overflow = 'hidden'; 
-    } else {
-        // যদি মেনু বন্ধ থাকে
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// ইভেন্ট লিসেনারগুলো
-mobileMenuBtn.addEventListener('click', toggleMenu);
-closeMenu.addEventListener('click', toggleMenu);
-menuOverlay.addEventListener('click', toggleMenu);
-
-  const toggleBtn = document.getElementById("themeToggle");
-  const html = document.documentElement;
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    html.classList.add('dark');
-    toggleBtn.textContent = "☀️";
-  }
-  toggleBtn.addEventListener("click", () => {
-    html.classList.toggle("dark");
-    if (html.classList.contains("dark")) {
-      toggleBtn.textContent = "☀️";
-      localStorage.theme = 'dark';
-    } else {
-      toggleBtn.textContent = "🌙";
-      localStorage.theme = 'light';
-    }
-  })
-
-
- document.addEventListener('DOMContentLoaded', function() {
-    // এখানে আমরা দুটি বাটনকেই ধরছি (ডেস্কটপ এবং মোবাইল)
-    const qrBtn = document.getElementById('qrBtn');
-    const qrBtnMobile = document.getElementById('qrBtnMobile'); 
-    
-    const qrModal = document.getElementById('qrModal');
-    const modalBox = document.getElementById('modalBox');
-    const closeModal = document.getElementById('closeModal');
-
-    // মডাল ওপেন করার ফাংশন
-    function openModal(e) {
-        if(e) e.preventDefault();
-        console.log("QR Modal Opening..."); 
-        qrModal.classList.remove('hidden');
-        qrModal.classList.add('flex');
-        
-        setTimeout(() => {
-            modalBox.classList.remove('scale-95', 'opacity-0');
-            modalBox.classList.add('scale-100', 'opacity-100');
-        }, 20);
-    }
-
-    // মডাল হাইড করার ফাংশন
-    function hideModal() {
-        modalBox.classList.remove('scale-100', 'opacity-100');
-        modalBox.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => {
-            qrModal.classList.add('hidden');
-            qrModal.classList.remove('flex');
-        }, 300);
-    }
-
-    // ডেস্কটপ বাটনের জন্য ইভেন্ট
-    if(qrBtn) {
-        qrBtn.addEventListener('click', openModal);
-    }
-
-    // মোবাইল বাটনের জন্য ইভেন্ট
-    if(qrBtnMobile) {
-        qrBtnMobile.addEventListener('click', openModal);
-    }
-
-    // ক্লোজ বাটনের জন্য ইভেন্ট
-    if(closeModal) {
-        closeModal.addEventListener('click', hideModal);
-    }
-
-    // মডালের বাইরে ক্লিক করলে বন্ধ হবে
-    window.addEventListener('click', function(e) {
-        if (e.target === qrModal) {
-            hideModal();
+        if (isOpening) {
+            // মেনু যখন ওপেন হবে
+            mobileMenu.classList.remove('translate-x-full');
+            menuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // পেছনের স্ক্রল বন্ধ
+        } else {
+            // মেনু যখন বন্ধ হবে
+            mobileMenu.classList.add('translate-x-full');
+            menuOverlay.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // পেছনের স্ক্রল চালু
         }
-    });
+    }
 
-});
+    // মেনু ইভেন্ট লিসেনার
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
+    if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
+    if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+
+
+    // --- থিম টগল (ডার্ক মোড) লজিক (আগের মতো) ---
+    const toggleBtn = document.getElementById("themeToggle");
+    const html = document.documentElement;
+    
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        if (toggleBtn) toggleBtn.textContent = "☀️";
+    }
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            html.classList.toggle("dark");
+            if (html.classList.contains("dark")) {
+                toggleBtn.textContent = "☀️";
+                localStorage.theme = 'dark';
+            } else {
+                toggleBtn.textContent = "🌙";
+                localStorage.theme = 'light';
+            }
+        });
+    }
+
+
+    // --- কিউআর কোড এবং অন্যান্য (DOM Content Loaded) ---
+    document.addEventListener('DOMContentLoaded', function() {
+        const qrBtn = document.getElementById('qrBtn');
+        const qrBtnMobile = document.getElementById('qrBtnMobile'); 
+        const qrModal = document.getElementById('qrModal');
+        const modalBox = document.getElementById('modalBox');
+        const closeModal = document.getElementById('closeModal');
+
+        function openModal(e) {
+            if(e) e.preventDefault();
+            qrModal.classList.remove('hidden');
+            qrModal.classList.add('flex');
+            
+            setTimeout(() => {
+                modalBox.classList.remove('scale-95', 'opacity-0');
+                modalBox.classList.add('scale-100', 'opacity-100');
+            }, 20);
+        }
+
+        function hideModal() {
+            modalBox.classList.remove('scale-100', 'opacity-100');
+            modalBox.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                qrModal.classList.add('hidden');
+                qrModal.classList.remove('flex');
+            }, 300);
+        }
+
+        if(qrBtn) qrBtn.addEventListener('click', openModal);
+        if(qrBtnMobile) qrBtnMobile.addEventListener('click', openModal);
+        if(closeModal) closeModal.addEventListener('click', hideModal);
+
+        window.addEventListener('click', function(e) {
+            if (e.target === qrModal) {
+                hideModal();
+            }
+        });
+    });
 </script>
 </body>
 </html>

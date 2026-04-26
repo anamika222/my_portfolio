@@ -104,29 +104,31 @@
     </div>
   </div>
 <div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 transform translate-x-full transition-transform duration-300 md:hidden" 
-     style="background-color: #ffffff; z-index: 9999; box-shadow: -5px 0 20px rgba(0,0,0,0.5);">
+     style="background-color: #ffffff !important; z-index: 99999 !important; box-shadow: -10px 0 30px rgba(0,0,0,0.5); display: block !important;">
     
     <div class="p-6 flex flex-col h-full">
-        <div class="flex justify-between items-center mb-8 pb-4" style="border-bottom: 1px solid #eee;">
-            <span class="font-bold text-xl" style="color: #1e40af;">Menu</span>
-            <button id="closeMenu" class="text-4xl" style="color: #666; cursor: pointer;">&times;</button>
+        <div class="flex justify-between items-center mb-10 pb-4" style="border-bottom: 2px solid #f3f4f6;">
+            <span class="font-bold text-2xl" style="color: #1e40af !important; opacity: 1 !important;">Navigation</span>
+            <button id="closeMenu" class="text-4xl" style="color: #ef4444 !important; cursor: pointer;">&times;</button>
         </div>
         
-        <nav class="flex flex-col gap-6 text-lg font-bold">
-            <a href="{% url 'home' %}" style="color: #111;">Home</a>
-            <a href="{% url 'courses' %}" style="color: #111;">Courses</a>
-            <a href="{% url 'services' %}" style="color: #111;">Services</a>
-            <a href="{% url 'blog_list' %}" style="color: #111;">Blog</a>
-            <hr>
-            <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-3 rounded-xl text-center shadow-lg">
-                Consultation
-            </a>
+        <nav class="flex flex-col gap-8 text-xl font-bold">
+            <a href="{% url 'home' %}" style="color: #111827 !important; display: block;">Home</a>
+            <a href="{% url 'courses' %}" style="color: #111827 !important; display: block;">Courses</a>
+            <a href="{% url 'services' %}" style="color: #111827 !important; display: block;">Services</a>
+            <a href="{% url 'blog_list' %}" style="color: #111827 !important; display: block;">Blog</a>
+            
+            <div class="mt-4">
+                <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-6 py-4 rounded-2xl text-center shadow-xl block" style="text-decoration: none !important;">
+                    Get Consultation
+                </a>
+            </div>
         </nav>
     </div>
 </div>
 
 <div id="menuOverlay" class="fixed inset-0 hidden md:hidden" 
-     style="background-color: rgba(0, 0, 0, 0.8) !important; z-index: 9998; backdrop-filter: blur(5px);">
+     style="background-color: rgba(0, 0, 0, 0.85) !important; z-index: 99998 !important; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
 </div>
 
 </header>

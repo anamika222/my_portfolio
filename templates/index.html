@@ -103,25 +103,24 @@
       </button>
     </div>
   </div>
-
- <div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 bg-white dark:bg-gray-900 z-[1000] transform translate-x-full transition-transform duration-300 shadow-2xl md:hidden">
+<div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 bg-white dark:bg-gray-900 z-[9999] transform translate-x-full transition-transform duration-300 shadow-2xl md:hidden" style="visibility: visible !important;">
     <div class="p-6 flex flex-col h-full">
-        <div class="flex justify-between items-center mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">
+        <div class="flex justify-between items-center mb-8 border-b pb-4">
             <span class="font-bold text-xl text-blue-800 dark:text-teal-400">Menu</span>
-            <button id="closeMenu" class="text-3xl text-gray-500 hover:text-red-500">&times;</button>
+            <button id="closeMenu" class="text-3xl text-gray-500">&times;</button>
         </div>
         <nav class="flex flex-col gap-6 text-lg font-bold">
-            <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Home</a>
-            <a href="{% url 'courses' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Courses</a>
-            <a href="{% url 'services' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Services</a>
-            <a href="{% url 'blog_list' %}" class="text-gray-800 dark:text-gray-200 hover:text-teal-600 transition-colors">Blog</a>
-            <hr class="dark:border-gray-800">
-            <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-3 rounded-xl text-center font-bold">Consultation</a>
+            <a href="{% url 'home' %}" class="text-gray-800 dark:text-gray-200">Home</a>
+            <a href="{% url 'courses' %}" class="text-gray-800 dark:text-gray-200">Courses</a>
+            <a href="{% url 'services' %}" class="text-gray-800 dark:text-gray-200">Services</a>
+            <a href="{% url 'blog_list' %}" class="text-gray-800 dark:text-gray-200">Blog</a>
+            <hr>
+            <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-3 rounded-xl text-center">Consultation</a>
         </nav>
     </div>
 </div>
 
-<div id="menuOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[900] hidden"></div>
+<div id="menuOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9998] hidden" style="background-color: rgba(0,0,0,0.7) !important;"></div>
 
 
 </header>
@@ -400,32 +399,29 @@
 </div>
 
 <script>
-    // --- মেনুবার এবং ওভারলে লজিক (Updated) ---
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu = document.getElementById('closeMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.getElementById('closeMenu');
+const menuOverlay = document.getElementById('menuOverlay');
 
-    function toggleMenu() {
-        const isOpening = mobileMenu.classList.contains('translate-x-full');
-
-        if (isOpening) {
-            // মেনু যখন ওপেন হবে
-            mobileMenu.classList.remove('translate-x-full');
-            menuOverlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // পেছনের স্ক্রল বন্ধ
-        } else {
-            // মেনু যখন বন্ধ হবে
-            mobileMenu.classList.add('translate-x-full');
-            menuOverlay.classList.add('hidden');
-            document.body.style.overflow = 'auto'; // পেছনের স্ক্রল চালু
-        }
+function toggleMenu() {
+    if (mobileMenu.classList.contains('translate-x-full')) {
+        // মেনু ওপেন হবে
+        mobileMenu.classList.remove('translate-x-full');
+        menuOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; 
+    } else {
+        // মেনু বন্ধ হবে
+        mobileMenu.classList.add('translate-x-full');
+        menuOverlay.classList.add('hidden');
+        document.body.style.overflow = 'auto';
     }
+}
 
-    // মেনু ইভেন্ট লিসেনার
-    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
-    if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
-    if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+// ইভেন্ট লিসেনার নিশ্চিত করা
+if(mobileMenuBtn) mobileMenuBtn.onclick = toggleMenu;
+if(closeMenu) closeMenu.onclick = toggleMenu;
+if(menuOverlay) menuOverlay.onclick = toggleMenu;
 
 
     // --- থিম টগল (ডার্ক মোড) লজিক (আগের মতো) ---

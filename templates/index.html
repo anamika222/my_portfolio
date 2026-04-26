@@ -103,21 +103,27 @@
       </button>
     </div>
   </div>
-<div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 bg-white dark:bg-gray-900 z-[9999] transform translate-x-full transition-transform duration-300 shadow-2xl md:hidden" style="visibility: visible !important;">
+<div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 z-[9999] transform translate-x-full transition-transform duration-300 md:hidden" 
+     style="background-color: #ffffff; box-shadow: -5px 0 15px rgba(0,0,0,0.3); color: #000000;">
+    
     <div class="p-6 flex flex-col h-full">
         <div class="flex justify-between items-center mb-8 border-b pb-4">
-            <span class="font-bold text-xl text-blue-800 dark:text-teal-400">Menu</span>
-            <button id="closeMenu" class="text-3xl text-gray-500">&times;</button>
+            <span class="font-bold text-xl" style="color: #1e40af;">Menu</span>
+            <button id="closeMenu" class="text-3xl" style="color: #6b7280;">&times;</button>
         </div>
         <nav class="flex flex-col gap-6 text-lg font-bold">
-            <a href="{% url 'home' %}" class="text-white-800 dark:text-gray-200">Home</a>
-            <a href="{% url 'courses' %}" class="text-white-800 dark:text-gray-200">Courses</a>
-            <a href="{% url 'services' %}" class="text-white-800 dark:text-gray-200">Services</a>
-            <a href="{% url 'blog_list' %}" class="text-white-800 dark:text-gray-200">Blog</a>
+            <a href="{% url 'home' %}" style="color: #111827;">Home</a>
+            <a href="{% url 'courses' %}" style="color: #111827;">Courses</a>
+            <a href="{% url 'services' %}" style="color: #111827;">Services</a>
+            <a href="{% url 'blog_list' %}" style="color: #111827;">Blog</a>
             <hr>
             <a href="{% url 'free_consultation' %}" class="bg-orange-500 text-white px-5 py-3 rounded-xl text-center">Consultation</a>
         </nav>
     </div>
+</div>
+
+<div id="menuOverlay" class="fixed inset-0 z-[9998] hidden md:hidden" 
+     style="background-color: rgba(0, 0, 0, 0.75); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);">
 </div>
 
 <div id="menuOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9998] hidden" style="background-color: rgba(0,0,0,0.7) !important;"></div>
@@ -405,8 +411,12 @@ const closeMenu = document.getElementById('closeMenu');
 const menuOverlay = document.getElementById('menuOverlay');
 
 function toggleMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    
+    // চেক করা হচ্ছে মেনু কি এখন বন্ধ (translate-x-full আছে কি না)
     if (mobileMenu.classList.contains('translate-x-full')) {
-        // মেনু ওপেন হবে
+        // মেনু খুলবে
         mobileMenu.classList.remove('translate-x-full');
         menuOverlay.classList.remove('hidden');
         document.body.style.overflow = 'hidden'; 
@@ -417,6 +427,7 @@ function toggleMenu() {
         document.body.style.overflow = 'auto';
     }
 }
+  
 
 // ইভেন্ট লিসেনার নিশ্চিত করা
 if(mobileMenuBtn) mobileMenuBtn.onclick = toggleMenu;
